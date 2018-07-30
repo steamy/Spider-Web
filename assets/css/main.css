@@ -1,28 +1,39 @@
-html, body
+
+
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption
 {
-  background-color: #fff;
-  color: #000;
-  letter-spacing: 0.5px;
-  font-family: "Source Sans Pro", Arial, sans-serif;
-  height: 100vh;
   margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: "Helvetica Neue", Arial,-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  box-sizing: border-box;
+  border: none;
+  text-decoration: none;
 }
+/*div, section{*/
+  /*height: 100%;*/
+/*}*/
 
-footer
-{
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid #ddd;
-}
-
-a, a:hover, a:focus, a:visited
-{
-  color: #000;
-}
-
-.logo {
+html, body {
   width: 100%;
-  height: auto;
-  max-width: 400px;
-  max-height: 289px;
+  height: 100%;
+}
+html {
+  font-size: 12px;
+}
+
+.title {
+  font-size: 1.67rem;
+}
+
+.sub_title {
+  font-size: 1.08rem;
+}
+
+.desc {
+  font-size: 1.17rem;
+}
+
+.bg-color {
+  background: #EAEFF3;
 }

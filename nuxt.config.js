@@ -7,13 +7,7 @@ module.exports = {
       routes.push({
         name: '404',
         path: '*',
-        component: resolve(__dirname, 'layouts/error.vue'),
-        props: {
-          error: {
-            code: 404,
-            message: 'Not Found'
-          }
-        }
+        component: resolve(__dirname, 'pages/error_404.vue')
       })
     }
   },

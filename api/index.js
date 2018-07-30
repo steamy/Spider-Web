@@ -1,5 +1,5 @@
 const express = require('express')
-const {Nuxt, Builder} =  require('nuxt')
+const {Nuxt, Builder} = require('nuxt')
 
 process.env.DEBUG = 'nuxt:*'
 

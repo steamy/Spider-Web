@@ -1,0 +1,33 @@
+
+<svg width="1200px" height="350px" viewBox="160 353 1198 348.8511" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="107.492188%" y1="-7.92299107%" x2="-7.8359375%" y2="107.922991%" id="linearGradient-1">
+            <stop stop-color="#3A3897" offset="0%"></stop>
+            <stop stop-color="#A3A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="106.546691%" y1="-7.27776566%" x2="-19.5629869%" y2="119.505323%" id="linearGradient-2">
+            <stop stop-color="#662D8C" offset="0%"></stop>
+            <stop stop-color="#ED1E79" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Bg-image" fill-rule="nonzero">
+            <g id="Group" transform="translate(158.000000, 351.000000)">
+                <g id="path-3-link" fill="url(#linearGradient-1)">
+                    <rect id="path-3" x="0" y="0" width="1200" height="350"></rect>
+                </g>
+                <g id="path-3-link" fill="url(#linearGradient-2)" fill-opacity="0.3">
+                    <rect id="path-3" x="0" y="0" width="1200" height="350"></rect>
+                </g>
+            </g>
+            <path d="M188.047861,399.394238 C188.047861,399.394238 2103.97585,649.653472 1613.8167,265.813601 C1123.65755,-118.02627 188.047861,399.394238 188.047861,399.394238 Z" id="Path-2" fill-opacity="0.0399999991" fill="url(#linearGradient-3)" transform="translate(941.047861, 301.820885) scale(-1, 1) rotate(173.000000) translate(-941.047861, -301.820885) "></path>
+            <path d="M-3.14665544e-06,331.042739 C-3.14665544e-06,331.042739 2045.69204,631.963886 1522.33486,170.42034 C998.977669,-291.123206 -3.14665544e-06,331.042739 -3.14665544e-06,331.042739 Z" id="Path-2" fill-opacity="0.0399999991" fill="url(#linearGradient-3)" transform="translate(803.999998, 213.716857) rotate(180.000000) translate(-803.999998, -213.716857) "></path>
+        </g>
+    </g>
+</svg>

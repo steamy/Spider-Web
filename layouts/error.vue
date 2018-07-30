@@ -14,7 +14,11 @@
 </template>
 <script>
 export default {
-  props: ['error']
+  props: ['error'],
+  created: function () {
+    console.log(this.props)
+    console.log(this.error)
+  }
 }
 </script>
 

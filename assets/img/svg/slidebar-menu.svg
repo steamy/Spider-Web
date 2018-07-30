@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Menu</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Exchanger" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-204.000000, -35.000000)" id="Sidebar">
+            <g>
+                <g id="Menu" transform="translate(204.000000, 35.000000)">
+                    <path d="M6.59696442,2 L15.4035189,2 C15.733662,2 16,1.55266667 16,1 C16,0.448 15.7317285,0 15.4035189,0 L6.59696442,0 C6.26633797,0 6,0.448 6,1 C6,1.55266667 6.26827146,2 6.59696442,2 Z" id="Fill-1" fill="#6F6DCC"></path>
+                    <path d="M15.1578947,6 L0.842105263,6 C0.427923267,6 0,6.448 0,7 C0,7.55266667 0.427923267,8 0.842105263,8 L15.1578947,8 C15.5720767,8 16,7.55266667 16,7 C16,6.448 15.5720767,6 15.1578947,6 Z" id="Fill-2" fill="#9795E3"></path>
+                    <path d="M15,12 L7,12 C6.26633797,12 6,12.4473333 6,13 C6,13.552 6.26827146,14 7,14 L15,14 C15.733662,14 16,13.552 16,13 C16,12.4473333 15.733662,12 15,12 Z" id="Fill-3" fill="#6F6DCC"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
