@@ -16,6 +16,11 @@
                 <p class="desc">{{menu.name}}</p>
             </nuxt-link>
         </section>
+
+        <section id="copyright" class="desc">
+            <p>All rights @Jupiter</p>
+            <p>reserved</p>
+        </section>
     </section>
 </template>
 
@@ -28,9 +33,6 @@ export default {
       menus: Menus
     }
   }
-  // mounted () {
-  //   console.log(this.currentTag)
-  // }
 }
 </script>
 
@@ -104,6 +106,16 @@ export default {
     .nuxt-link-exact-active {
         opacity: 1 !important;
         background-color: #30304D;
+    }
+
+    #left-side-bar #copyright {
+        position: absolute;
+        height: fit-content;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        opacity: 0.5;
     }
 
 
