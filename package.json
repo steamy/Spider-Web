@@ -13,12 +13,18 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "bufferutil": "^4.0.0",
     "cross-env": "^5.0.1",
     "express": "^4.15.3",
+    "express-ws": "^4.0.0",
+    "hiredis": "^0.5.0",
+    "mysql2": "^1.5.3",
     "nuxt": "latest",
-    "source-map-support": "^0.4.15",
+    "redis": "^2.8.0",
     "sequelize": "^4.38.0",
-    "mysql2": "^1.5.3"
+    "source-map-support": "^0.4.15",
+    "utf-8-validate": "^5.0.1",
+    "vue-echarts": "^3.0.9"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -30,6 +36,7 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "backpack-core": "^0.7.0"
+    "backpack-core": "^0.7.0",
+    "webpack-node-externals": "^1.7.2"
   }
 }

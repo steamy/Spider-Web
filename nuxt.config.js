@@ -1,3 +1,5 @@
+const nodeExternals = require('webpack-node-externals')
+
 module.exports = {
   /**
    * router
@@ -38,6 +40,19 @@ module.exports = {
     ** Run ESLINT on save
     */
     extend (config, ctx) {
+      /**
+       * 配置echarts
+       */
+      if (ctx.isServer) {
+        config.externals = [
+          nodeExternals({
+            // default value for `whitelist` is
+            // [/es6-promise|\.(?!(?:js|json)$).{1,5}$/i]
+            whitelist: [/es6-promise|\.(?!(?:js|json)$).{1,5}$/i, /^vue-echarts/]
+          })
+        ]
+      }
+
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
