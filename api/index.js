@@ -16,11 +16,12 @@ const subRedis = require('./utils/redis_engine')
  */
 let fetchedUserNumUpdate = 'fetched_user_num_update'
 subRedis.on('message', function (channel, message) {
+  console.log('get_message_from_redis')
   if (channel === fetchedUserNumUpdate) {
     const wss = expressWs.getWss().clients
     wss.forEach(function (ws, index) {
       if (ws.readyState === 1) {
-        ws.send('1')
+        ws.send(message)
       } else {
         console( String(ws.sessionId) + 'closed')
       }

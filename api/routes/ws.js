@@ -5,7 +5,6 @@
 const {Router} = require('express')
 const router = Router()
 
-
 router.ws('/admin', function (ws, req) {
   ws.on('message', function (msg) {
     console.log(msg)

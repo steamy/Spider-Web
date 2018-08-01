@@ -17,32 +17,10 @@
     components: {LeftSideBar},
     data () {
       return {
-        currentTag: 0,
-        ws: ''
+        currentTag: 0
       }
     },
     methods: {
-    },
-
-    mounted () {
-      console.log('mounted')
-      this.ws = new WebSocket('ws://localhost:3000/ws/admin')
-      let _this = this
-      this.ws.onmessage = function (e) {
-        console.log('onmessage')
-        console.log(e.data)
-      }
-      this.ws.onerror = function (err) {
-        console.log(err)
-      }
-      this.ws.onopen = function () {
-        // console.log('onopen')
-        _this.ws.send('hello')
-      }
-      this.ws.onclose = function () {
-        console.log('close socket')
-        // _this.ws.send('closed')
-      }
     }
   }
 </script>

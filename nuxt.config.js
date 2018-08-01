@@ -1,6 +1,7 @@
 const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
+  plugins: [{src: '@plugins/element-ui.js', ssr: true}],
   /**
    * router
    */
@@ -35,7 +36,15 @@ module.exports = {
   ** Add axios globally
   */
   build: {
-    vendor: ['axios'],
+    vendor: ['axios', 'element-ui'],
+    babel: {
+      'plugins': [['component', [
+        {
+          'libraryName': 'element-ui',
+          'styleLibraryName': 'theme-chalk'
+        }
+      ]]]
+    },
     /*
     ** Run ESLINT on save
     */

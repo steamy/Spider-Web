@@ -1,6 +1,6 @@
 
 
-body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption
+body, div, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption
 {
   margin: 0;
   padding: 0;
@@ -36,4 +36,9 @@ html {
 
 .bg-color {
   background: #EAEFF3;
+}
+
+#dashboard #preview .el-select--mini .el-input__inner {
+  padding-left: 0 ;
+  text-align: center;
 }
