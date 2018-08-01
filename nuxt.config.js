@@ -41,7 +41,7 @@ module.exports = {
       'plugins': [['component', [
         {
           'libraryName': 'element-ui',
-          'styleLibraryName': 'theme-chalk'
+          'styleLibraryName': '~assets/css/element-purple'
         }
       ]]]
     },

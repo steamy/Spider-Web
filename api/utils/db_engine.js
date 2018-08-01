@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const isProd = process.env.NODE_ENV === 'production'
 
 const sequlize = new Sequelize('douban', 'root', 'steam', {
-  host: isProd ? 'mysql' : '127.0.0.1',
+  host: '127.0.0.1',
   port: '3307',
   dialect: 'mysql',
   operatorsAliases: false,

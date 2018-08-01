@@ -6,7 +6,8 @@
 
 <script>
   export default {
-    name: 'analysis'
+    name: 'analysis',
+    transition: 'zoom-top'
   }
 </script>
 

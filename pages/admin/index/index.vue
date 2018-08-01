@@ -40,6 +40,7 @@
 <script>
   import axios from '~/plugins/axios'
   export default {
+    transition: 'zoom-top',
     name: 'index',
     async asyncData () {
       let { data, err } = await axios.get('/api/v1/admin/spider')
@@ -190,7 +191,6 @@
         justify-content: space-between;
         align-items: center;
     }
-
     #dashboard #spider #preview-cards .card {
         background: #FFFFFF;
         box-shadow: 0 4px 6px 0 rgba(48,48,77,0.05), 0 2px 4px 0 rgba(48,48,77,0.05);
