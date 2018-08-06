@@ -45,6 +45,7 @@ export default {
         position: fixed;
         overflow: hidden;
         z-index: 10;
+        color: #ffffff;
     }
 
     #left-side-bar #nav {
@@ -98,6 +99,7 @@ export default {
         align-items: center;
         padding-left: 30px;
         opacity: 0.6;
+        color: #ffffff;
     }
     #left-side-bar #menus .menu p {
         margin-left: 20px;

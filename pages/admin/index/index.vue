@@ -34,6 +34,34 @@
                 </div>
             </div>
         </section>
+        <section id="data">
+            <div class="nav">
+                <p class="title"> Last Fetched </p>
+
+
+            </div>
+            <div id="preview-data">
+                <el-table  :data="previewData">
+                    <el-table-column
+                            style="color: #24292C;"
+                            prop="user_nickname"
+                            label="昵称">
+                    </el-table-column>
+                    <el-table-column class="desc"
+                                     prop="check_in_time"
+                                     label="注册时间">
+                    </el-table-column>
+                    <el-table-column class="desc"
+                                     prop="signature"
+                                     label="签名">
+                    </el-table-column>
+                    <el-table-column class="desc"
+                                     prop="location"
+                                     label="居住地">
+                    </el-table-column>
+                </el-table>
+            </div>
+        </section>
     </section>
 </template>
 
@@ -47,10 +75,29 @@
       if (err) {
         console.log(err)
       }
-      return {initData: data}
+      return {initData: data, previewData: data.users}
     },
     data () {
       return {
+        // loading: true,
+        previewDataColumn: [
+          {
+            key: 'user_nickname',
+            label: '昵称'
+          },
+          {
+            key: 'check_in_time',
+            label: '注册时间'
+          },
+          {
+            key: 'location',
+            label: '居住地'
+          },
+          {
+            key: 'signature',
+            label: '签名'
+          }
+        ],
         refreshPreCardTime: 2,
         ws: '',
         spiderPreviewData: [
@@ -143,6 +190,7 @@
     #dashboard #spider {
         width: 574px;
         height: fit-content;
+        padding-bottom: 30px;
     }
     #dashboard #spider .nav {
         display: flex;
@@ -224,7 +272,13 @@
         font-size: 2rem;
         font-weight: 400;
     }
+    #dashboard #data {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        width: 574px;
+    }
 
-
-
+    #dashboard #data #preview-data {
+        margin-top: 30px;
+    }
 </style>

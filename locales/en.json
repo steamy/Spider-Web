@@ -1,0 +1,41 @@
+{
+  "admin": {
+    "title": "Douser",
+    "menu": {
+      "dashboard": "Dashboard",
+      "analysis": "Analysis",
+      "copy_right_1": "All rights @Jupiter",
+      "copy_right_2": "reserved"
+    },
+    "spider": {
+      "title": "Spider Monitor",
+      "user_fetched": "User fetched",
+      "proxy_pool": "Proxy pool",
+      "update_data_every": "update data every",
+      "mins": "mins",
+      "cards": [
+        {
+          "cope": "Got",
+          "des": "users from douban"
+        },
+        {
+          "cope": "Want",
+          "des": "users from douban"
+        },
+        {
+          "cope": "Pull",
+          "des": "ips in pool"
+        }
+      ]
+    },
+    "last_fetched": {
+      "title": "Last Fetched",
+      "table_header": {
+        "nickname": "nickname",
+        "check_in_time": "check in",
+        "signature": "signature",
+        "location": "location"
+      }
+    }
+  }
+}
