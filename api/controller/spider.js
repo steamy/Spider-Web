@@ -40,6 +40,7 @@ class SpiderContoller {
       'userid_used_num': res[1],
       'useful_proxy_num': res[2]
     }
+    r.quit()
     return data
   }
   async getLastFetchData () {

@@ -14,14 +14,9 @@
             <div id="charts"></div>
 
             <div id="preview">
-                <div id="set-loop-time">
-                    <p class="desc">update data every</p>
-                    <el-select v-model="refreshPreCardTime"  size="mini">
-                        <el-option  :value="1" :key="1" :label="1"></el-option>
-                        <el-option  :value="2" :key="2" :label="5"></el-option>
-                        <el-option  :value="3" :key="3" :label="10"></el-option>
-                    </el-select>
-                    <p class="desc">mins</p>
+                <div id="">
+                    <p class="desc">last update at    <span>   {{updateTime}}</span></p>
+
                 </div>
                 <div id="preview-cards">
                     <div class="card" v-for="(data, index) in spiderPreviewData">
@@ -31,6 +26,16 @@
                             <p class="desc">{{data.name}} {{data.source}}</p>
                         </div>
                     </div>
+                </div>
+
+                <div id="set-loop-time">
+                    <p class="desc">update data every</p>
+                    <el-select v-model="refreshPreCardTime"  size="mini">
+                        <el-option  :value="1" :key="1" :label="1"></el-option>
+                        <el-option  :value="2" :key="2" :label="5"></el-option>
+                        <el-option  :value="3" :key="3" :label="10"></el-option>
+                    </el-select>
+                    <p class="desc">mins</p>
                 </div>
             </div>
         </section>
@@ -80,6 +85,7 @@
     data () {
       return {
         // loading: true,
+        updateTime: '',
         previewDataColumn: [
           {
             key: 'user_nickname',
@@ -135,6 +141,8 @@
       }
     },
     mounted () {
+      let now = new Date()
+      this.updateTime = now.toLocaleString()
       /**
        * 设置soket
        */
@@ -145,9 +153,8 @@
         console.log('onmessage')
         let dataJson = JSON.parse(e.data)
         _this.setPreviewCards(dataJson)
-        // _this.spiderPreviewData[0].num = dataJson.userid_used_num
-        // _this.spiderPreviewData[1].num = dataJson.userid_wanted_num
-        // console.log(e.data)
+        let now = new Date()
+        _this.updateTime = now.toLocaleString()
       }
       this.ws.onerror = function (err) {
         console.log(err)
@@ -228,6 +235,7 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        margin-top: 10px;
     }
     #dashboard #preview .el-select {
         width: 55px;
