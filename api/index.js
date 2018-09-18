@@ -1,12 +1,13 @@
 const express = require('express')
 const {Nuxt, Builder} = require('nuxt')
+const bodyParser = require('body-parser')
 
 process.env.DEBUG = 'nuxt:*'
 
 // Create express instnace
 const app = express()
 
-//web-socket config
+// web-socket config
 var expressWs = require('express-ws')(app)
 
 const subRedis = require('./utils/redis_engine')
@@ -23,7 +24,7 @@ subRedis.on('message', function (channel, message) {
       if (ws.readyState === 1) {
         ws.send(message)
       } else {
-        console( String(ws.sessionId) + 'closed')
+        console(String(ws.sessionId) + 'closed')
       }
     })
   }
@@ -32,8 +33,13 @@ subRedis.subscribe(fetchedUserNumUpdate)
 
 // Require API routes
 const users = require('./routes/users')
-const router =require('./routes')
+const router = require('./routes')
 // Import API Routes
+app.use(bodyParser.json({limit: 'lmb'}))
+app.use(bodyParser.urlencoded({
+  extended: true
+}
+))
 app.use('/api', users)
 router(app)
 
@@ -57,8 +63,7 @@ if (config.dev) {
       console.error(error)
       process.exit(1)
     })
-}
-else {
+} else {
   listen()
 }
 

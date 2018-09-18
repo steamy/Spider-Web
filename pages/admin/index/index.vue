@@ -1,6 +1,7 @@
 <template>
     <section id="dashboard">
         <section id="spider">
+
             <div class="nav">
                 <p class="title"> Spider Monitor </p>
                 <div class="chart-nav">
@@ -11,7 +12,10 @@
                 </div>
             </div>
 
-            <div id="charts"></div>
+            <!--图表-->
+            <div id="chart">
+                <linechart   :width="565" :height="209" :data="chartLine.data" :options="chartLine.options"></linechart>
+            </div>
 
             <div id="preview">
                 <div id="">
@@ -30,7 +34,7 @@
 
                 <div id="set-loop-time">
                     <p class="desc">update data every</p>
-                    <el-select v-model="refreshPreCardTime"  size="mini">
+                    <el-select @change="setRefreshInterval" v-model="previewRefreshInterval"  size="mini">
                         <el-option  :value="1" :key="1" :label="1"></el-option>
                         <el-option  :value="2" :key="2" :label="5"></el-option>
                         <el-option  :value="3" :key="3" :label="10"></el-option>
@@ -72,7 +76,11 @@
 
 <script>
   import axios from '~/plugins/axios'
+  import Linechart from '~/plugins/chart/LineChart.js'
   export default {
+    components: {
+      Linechart
+    },
     transition: 'zoom-top',
     name: 'index',
     async asyncData () {
@@ -84,6 +92,40 @@
     },
     data () {
       return {
+        chartLine: {
+          data: {
+            labels: ['1', '2', '3'],
+            datasets: [
+              {
+                data: [0, 10, 20],
+                backgroundColor: '#284',
+                steppedLine: false
+              }
+            ]
+          },
+          options: {
+            layout: {
+              padding: {
+                left: 50
+              }
+            },
+            legend: {
+              display: false
+            },
+            title: {
+              display: false
+            },
+            scales: {
+              yAxes: [
+                {
+                  gridLines: {
+                    display: false
+                  }
+                }
+              ]
+            }
+          }
+        },
         // loading: true,
         updateTime: '',
         previewDataColumn: [
@@ -104,7 +146,6 @@
             label: '签名'
           }
         ],
-        refreshPreCardTime: 2,
         ws: '',
         spiderPreviewData: [
           {
@@ -128,16 +169,37 @@
             source: 'in pool',
             unit: ''
           }
-        ]
+        ],
+        previewRefreshInterval: 2
       }
     },
     methods: {
       setPreviewCards (data) {
         this.spiderPreviewData[0].num = data.userid_used_num
         this.spiderPreviewData[1].num = data.userid_wanted_num
+        console.log(data)
         if (typeof (data.useful_proxy_num) !== 'undefined') {
           this.spiderPreviewData[2].num = data.useful_proxy_num
         }
+        if (typeof (data.refresh_interval) !== 'undefined') {
+          this.previewRefreshInterval = this.mapInterval(data.refresh_interval)
+        }
+      },
+      mapInterval (interval, isDemap = false) {
+        if (!isDemap) {
+          return parseInt(interval / 5) + 1
+        } else {
+          if (interval === 1) {
+            return 1
+          }
+          return (interval - 1) * 5
+        }
+      },
+      setRefreshInterval () {
+        console.log(this.previewRefreshInterval)
+        axios.post('/api/v1/admin/spider/interval_time', {
+          refresh_interval: this.mapInterval(this.previewRefreshInterval)
+        })
       }
     },
     mounted () {
@@ -217,13 +279,16 @@
         margin-left: 30px;
     }
 
-    #dashboard #spider #charts {
+    #dashboard #spider #chart {
         margin-top: 30px;
         margin-left: 10px;
         width: 565px;
         height: 242px;
         background-image: linear-gradient(-225deg, #8E78FF 0%, #FC7D7B 100%);
         border-radius: 6px;
+    }
+    #dashboard #spider #charts .echarts {
+        height: 242px;
     }
 
     #dashboard #spider #preview {

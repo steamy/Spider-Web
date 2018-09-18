@@ -1,7 +1,10 @@
 const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
-  plugins: [{src: '@plugins/element-ui.js', ssr: true}],
+  plugins: [
+    {src: '@plugins/element-ui.js', ssr: true},
+    {src: '@plugins/vue-chart-js.js'}
+  ],
   /**
    * router
    */
@@ -36,7 +39,7 @@ module.exports = {
   ** Add axios globally
   */
   build: {
-    vendor: ['axios', 'element-ui'],
+    vendor: ['axios', 'element-ui', 'vue-chartjs'],
     babel: {
       'plugins': [['component', [
         {
@@ -57,7 +60,7 @@ module.exports = {
           nodeExternals({
             // default value for `whitelist` is
             // [/es6-promise|\.(?!(?:js|json)$).{1,5}$/i]
-            whitelist: [/es6-promise|\.(?!(?:js|json)$).{1,5}$/i, /^vue-echarts/]
+            whitelist: [/es6-promise|\.(?!(?:js|json)$).{1,5}$/i, /^vue-chartjs/]
           })
         ]
       }
